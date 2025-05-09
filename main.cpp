@@ -1,4 +1,4 @@
-// Trabalho A - Processamento Gráfico - Carlos e Wesley - Turma 51
+
 
 #define _CRT_SECURE_NO_DEPRECATE
 #include <gl/glut.h>
@@ -116,7 +116,7 @@ Item item_ammo = Item();
 void RespawnEnemies();
 
 //Desenha uma imagem na tela
-//O movFact é o fator de movimento ou seja, scrolling
+//O movFact Ã© o fator de movimento ou seja, scrolling
 void DrawImage(Image img, float x, float y, float movFact, int isSpr = 0) {
 	float midSize = (ortSize / 2);
 
@@ -253,7 +253,7 @@ void loadSystem() {
 	disFromEnd = fabs(endCam - player.x);
 }
 
-//Faz a animação de um sprite
+//Faz a animaÃ§Ã£o de um sprite
 void animateSprite(int spriteNum, Sprite_Animation * anim, float posX, float posY, bool hasAnim, int hasLoop) {
 	if (hasAnim) {
 		if (hasLoop == 0) {
@@ -394,7 +394,7 @@ void DrawLife() {
 	}
 }
 
-//Mostra a quantidade de munição restante
+//Mostra a quantidade de muniÃ§Ã£o restante
 void DrawPoints() {
 	float posX = absCam - 0.49f;
 	for (int i = 0; i < player.ammo; i++) {
@@ -421,7 +421,7 @@ void DrawWave() {
 	DrawTxt(remain_txt, 15, 255, 0, 0, absCam + 0.4, 0.85);
 }
 
-//Desenha munição na tela
+//Desenha muniÃ§Ã£o na tela
 void CreateItemAmmo() {
 	DrawImage(imgs[3], item_ammo.x, item_ammo.y, 1);
 }
@@ -441,8 +441,8 @@ void player2IsAttacked(Enemy * enemy) {
 	}
 }
 
-//Ao coletar munição, se munição for menor que o maximo ela é acrescentada mas sempre recarrega o a munição atual
-//Apos isso é trocado a posição da munição para um ponto aleatorio no cenario
+//Ao coletar muniÃ§Ã£o, se muniÃ§Ã£o for menor que o maximo ela Ã© acrescentada mas sempre recarrega o a muniÃ§Ã£o atual
+//Apos isso Ã© trocado a posiÃ§Ã£o da muniÃ§Ã£o para um ponto aleatorio no cenario
 void collectAmmoP1() {
 	if (player.ammo < player.ammo_max) {
 		player.ammo += item_ammo.bonus;
@@ -463,7 +463,7 @@ void collectAmmoP2() {
 	item_ammo.x = float(rand() % 200 + 50) / 100;
 }
 
-//Mostra as animações do jogador
+//Mostra as animaÃ§Ãµes do jogador
 void DrawPlayer() {
 	if (player.getLife() <= 0) {
 		DrawImage(imgs[10], player.x, player.y, 1, 1);
@@ -556,7 +556,7 @@ void DrawPlayer2() {
 	}
 }
 
-// Metodo para pegar o zumbi mais proximo na direção do jogador
+// Metodo para pegar o zumbi mais proximo na direÃ§Ã£o do jogador
 void EnemyInRange() {
 	Enemy * enemy = NULL;
 	float disMin = 10;
@@ -775,7 +775,7 @@ void MovePlayer() {
 			player.y = player.y + player.dy;
 			player.x = player.x + player.dx;
 
-			//PLAYER coleta munição
+			//PLAYER coleta muniÃ§Ã£o
 			if (player.x >= item_ammo.x - 0.05f && player.x <= item_ammo.x + 0.05f) {
 				if (player.y <= item_ammo.y + 0.05f) {
 					collectAmmoP1();
@@ -843,7 +843,7 @@ void MovePlayer2() {
 			player2.y = player2.y + player2.dy;
 			player2.x = player2.x + player2.dx;
 
-			//PLAYER coleta munição
+			//PLAYER coleta muniÃ§Ã£o
 			if (player2.x >= item_ammo.x - 0.05f && player2.x <= item_ammo.x + 0.05f) {
 				if (player2.y <= item_ammo.y + 0.05f) {
 					collectAmmoP2();
@@ -1219,7 +1219,7 @@ void display() {
 	glutSwapBuffers();
 }
 
-//Ao precionar um botão de ação do jogador
+//Ao precionar um botÃ£o de aÃ§Ã£o do jogador
 void keyPress(unsigned char key, int x, int y) {
 	switch (key)
 	{
@@ -1296,7 +1296,7 @@ void keyPress(unsigned char key, int x, int y) {
 	}
 }
 
-//Ao soltar um botão de ação do jogador
+//Ao soltar um botÃ£o de aÃ§Ã£o do jogador
 void keyRelease(unsigned char key, int x, int y) {
 	switch (key)
 	{
@@ -1342,7 +1342,7 @@ void keyRelease(unsigned char key, int x, int y) {
 	}
 }
 
-// Botões especiais para comando da interface
+// BotÃµes especiais para comando da interface
 void specialKeys(int button, int x, int y) {
 	if (STATE == STATE_MAINMENU) {
 		switch (button) {
@@ -1376,7 +1376,7 @@ void specialKeys(int button, int x, int y) {
 	}
 }
 
-//Movimenta a camera na posição do player
+//Movimenta a camera na posiÃ§Ã£o do player
 void moveCamera() {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
@@ -1392,7 +1392,7 @@ void moveCamera() {
 	glTranslatef(xCam, 0, 0);
 }
 
-//Timer para animação
+//Timer para animaÃ§Ã£o
 int curtime = 0;
 
 void Timer(int iUnused) {
