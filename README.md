@@ -1,7 +1,5 @@
 # Zombity - Survival Wave Shooter
 
-![Zombity Game Logo](screenshot.png) <!-- Add actual screenshot path -->
-
 ## Visão Geral do Jogo
 Zombity é um jogo de ação 2D com rolagem paralaxe onde você enfrenta ondas de zumbis cada vez mais desafiadoras. Recursos principais:
 
@@ -45,10 +43,6 @@ Principais componentes:
 - `Enemy.cpp`: IA dos zumbis
 - `Wave.cpp`: Gerenciador de ondas
 - `Layer.cpp`: Sistema de parallax
-
-## Desenvolvedores
-[Seu Nome/Nome da Equipe]  
-[Contato/Website]
 
 ## Licença
 Código aberto para fins educacionais. Modifique e distribua livremente.
